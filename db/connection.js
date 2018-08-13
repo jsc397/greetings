@@ -2,13 +2,9 @@ const mongoose = require('mongoose')
 
 
 if (process.env.NODE_ENV == "production") {
-    mongoose.connect(process.env.MLAB_URL, {
-        useMongoClient: true
-    })
+    mongoose.connect(process.env.MLAB_URL)
 } else {
-    mongoose.connect("mongodb://localhost/greetingsdb", {
-        useMongoClient: true
-    });
+    mongoose.connect("mongodb://localhost/greetingsdb");
 }
 
 mongoose.Promise = Promise
